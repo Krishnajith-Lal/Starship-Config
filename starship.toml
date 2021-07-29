@@ -1,0 +1,73 @@
+format = """
+[╭──╼$time╾──](bold 223)[☉](bold 223) $shlvl $directory➤( $status) $cmd_duration
+[╰─](bold 223)[☉](bold 223) """
+scan_timeout = 10
+add_newline = true
+[line_break]
+disabled = false
+[character]
+success_symbol = "[➜](bold 226)"
+error_symbol = "[✗](bold 13)"
+vicmd_symbol = "[V](bold green) "
+disabled = false
+[cmd_duration]
+min_time = 60000
+format = "[⏱](bold #ff33bb) [$duration](bold #fe8700)"
+#format = "underwent [$duration](bold #fe8700)"
+[package]
+disabled = false
+[time]
+disabled = false
+format = '[$time](bold 223)'
+#format = '[⏱](#ff33bb bold) [$time](bold #ff33bb)'
+use_12hr = true
+time_format = "%3f"
+#time_format = "%e/%b/%Y %l:%M %p"
+utc_time_offset = "local"
+#time_range = "10:00:00-14:00:00"
+[username]
+style_user = "167 bold"
+style_root = "196 bold"
+format = "[$root]($style)[$user]($style)"
+disabled = false
+show_always = true
+[hostname]
+ssh_only = false
+format = "[@](bold 39)[fc34](bold 223)[❯](bold 82) "
+trim_at = ".companyname.com"
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+[[battery.display]]
+threshold = 30
+style = "bold 9"
+[[battery.display]]
+threshold = 99
+style = "bold #42b983"
+discharging_symbol = "🌀 "
+#discharging_symbol = "💦 "
+[directory]
+truncation_length = 8
+format = "[$path](bold 84)[$read_only]($read_only_style) "
+truncation_symbol = "…/"
+#read_only = " "
+#read_only_style = "bold #fb4933"
+home_symbol = "√"
+[status]
+style = "Bold #ec5975"
+#symbol = "🔴"
+#not_executable_symbol = "🚫"
+#not_found_symbol = "🔍"
+#sigint_symbol = "🧱"
+#signal_symbol = "⚡"
+format = '[\[($symbol )$common_meaning$signal_name( $signal_number)$maybe_int( $status)\]]($style) '
+map_symbol = true
+recognize_signal_code = true
+disabled = false
+[shlvl]
+disabled = false
+style = "bold #32c6f4"
+format = '[\[$shlvl\]]($style)'
+threshold = 0
+repeat = false
